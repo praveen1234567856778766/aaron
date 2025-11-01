@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARRON GARMENTS - Link in Bio</title>
+
+  <!-- ✅ Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- ✅ AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- ✅ Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- GENERAL PAGE STYLING ---------- */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2361ac, #1b4180, #2361ac);
+      background-size: 300% 300%;
+      animation: gradientMove 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container { text-align: center; max-width: 420px; }
+
+    /* ---------- LOGO ANIMATION (UPDATED) ---------- */
+    .logo-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: radial-gradient(circle at 30% 30%, #e1f0ff, #a8c0ff, #3f51b5);
+      box-shadow: 0 0 20px rgba(63, 81, 181, 0.6), 0 0 40px rgba(63, 81, 181, 0.3);
+      animation: floatLogo 4s ease-in-out infinite, logoGlow 6s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes logoGlow {
+      0% {
+        box-shadow: 0 0 20px rgba(63, 81, 181, 0.6), 0 0 40px rgba(63, 81, 181, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(173, 216, 230, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(63, 81, 181, 0.6), 0 0 40px rgba(63, 81, 181, 0.3);
+      }
+    }
+
+    .logo-circle img {
+      width: 80%;
+      height: 80%;
+      filter: drop-shadow(0 0 3px rgba(255,255,255,0.6));
+    }
+
+    /* ---------- SOCIAL ICONS ---------- */
+    .social-icon {
+      width: 38px; height: 38px; margin: 0 8px; transition: transform 0.3s;
+    }
+    .social-icon:hover { transform: scale(1.2); }
+
+    /* ---------- BUTTON STYLES ---------- */
+    .btn-custom {
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 6px 12px;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .btn-custom img {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255,255,255,0.4);
+      background-color: #f8f9fa;
+    }
+
+    /* ---------- TEXT AND HEADINGS ---------- */
+    .section-title { color: white; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 40px; }
+    .info-text {
+      color: #fff; font-size: 0.95rem; margin-bottom: 20px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 8px rgba(255,255,255,0.6); }
+      to { text-shadow: 0 0 16px rgba(255,255,255,0.9); }
+    }
+
+    /* ---------- STATE BUTTONS ---------- */
+    .state-btn {
+      border-radius: 30px; background-color: #ffffff; color: #000;
+      font-weight: 600; border: none; padding: 8px 18px; margin: 5px;
+      transition: all 0.3s;
+    }
+    .state-btn.active { background-color: #ffeb3b; color: #000; transform: scale(1.05); }
+    .state-btn:hover { background-color: #ffeb3b; color: #000; transform: scale(1.08); }
+
+    /* ---------- STATE SECTIONS ---------- */
+    .state-section { display: none; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer { color: #fff; opacity: 0.8; margin-top: 40px; font-size: 0.9rem; }
+
+    /* ---------- SHARE SECTION ---------- */
+    .share-section {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .share-section h3 {
+      color: #fff; font-size: 1.1rem; margin-bottom: 15px; font-weight: 600;
+    }
+    .copy-btn {
+      background-color: #ffeb3b; border: none; color: #000; font-weight: 600;
+      padding: 8px 15px; border-radius: 30px; margin-top: 10px; transition: 0.3s;
+    }
+    .copy-btn:hover { background-color: #fff176; transform: scale(1.05); }
+
+    /* ---------- BACK TO TOP BUTTON ---------- */
+    #backToTop {
+      position: fixed; bottom: 20px; right: 20px; display: none;
+      border: none; width: 50px; height: 50px; font-size: 1.5rem;
+      border-radius: 50%; background-color: #ffeb3b; color: #000;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    #backToTop:hover { transform: scale(1.1); background-color: #fff176; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="text-white mb-5" data-aos="fade-down">
+      <div class="logo-circle">
+        <img src="aaronlogo.png" alt="Logo">
+      </div>
+      <h1 class="fs-4 fw-bold">ARRON GARMENTS</h1>
+      <p class="mb-3 opacity-75">10 Branches Across South India</p>
+
+      <div class="d-flex justify-content-center">
+        <a href="https://www.instagram.com/aaron_garments?igsh=YWpkdWE0emkyZjNv" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="social-icon" alt="Instagram"></a>
+        <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="social-icon" alt="WhatsApp"></a>
+        <a href="tel:+919790851538"><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" class="social-icon" alt="Phone"></a>
+      </div>
+    </header>
+
+    <main>
+      <h2 class="text-center section-title mb-3" data-aos="zoom-in">Our Branches</h2>
+      <p class="info-text" data-aos="fade-up">💡 Click your state below to see its locations!</p>
+
+      <div class="mb-4">
+        <button id="btnAP" class="state-btn active" onclick="showState('andhra')">Andhra Pradesh</button>
+        <button id="btnTN" class="state-btn" onclick="showState('tamilnadu')">Tamil Nadu</button>
+      </div>
+
+      <!-- Tamil Nadu -->
+      <div id="tamilnadu" class="state-section">
+        <a href="https://share.google/91PjHy0dSDYkdp7Uo" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="200"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Royapuram - Open Location</a>
+        <a href="https://share.google/PxbxX5x3VGFnMqARw" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="100"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Padhirivedu - Open Location</a>
+        <a href="https://share.google/ML91Y6Py5jS8eS1rO" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="300"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Gummidipoondi - Open Location</a>
+        <a href="https://goo.gl/maps/nDHWvD2kP9x" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="400"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Anna Nagar - Open Location</a>
+        <a href="https://goo.gl/maps/EDTtN9CDw6x" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="500"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">T Nagar - Open Location</a>
+      </div>
+
+      <!-- Andhra Pradesh -->
+      <div id="andhra" class="state-section" style="display: block;">
+        <a href="https://share.google/RbsHlvcvx39aPoU6M" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="100"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Sullurupeta - Open Location</a>
+        <a href="https://share.google/PUfvE8FYjOwQhPBO0" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="200"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Kota - Open Location</a>
+        <a href="https://share.google/KzdJLSDOQKFJO7moq" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="300"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Naidupeta - Open Location</a>
+        <a href="https://share.google/diLUDcGYvvsEEImbZ" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="400"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Nellore - Open Location</a>
+        <a href="https://share.google/ZjnQgZdqGbQ1EA4lG" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="500"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Srikalahasti - Open Location</a>
+        <a href="https://share.google/7AfihvT4QudklugLX" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up" data-aos-delay="600"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">Tirupati - Open Location</a>
+      </div>
+
+      <h2 class="text-center section-title mt-5 mb-3" data-aos="zoom-in">Join WhatsApp Group</h2>
+      <a href="#" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt=""> Join Group
+      </a>
+
+      <a href="mailto:arrongarments@gmail.com" class="btn btn-custom mt-3" style="background:#28a745; color:#fff;" data-aos="fade-up" data-aos-delay="200">
+        ✉️ Contact Us
+      </a>
+    </main>
+
+    <section class="share-section" data-aos="fade-up">
+      <h3>📣 Share Our Page</h3>
+      <div class="d-flex justify-content-center flex-wrap">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="social-icon" alt="Twitter"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="social-icon" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="social-icon" alt="WhatsApp"></a>
+      </div>
+      <button class="copy-btn" onclick="copyPageLink()">📋 Copy Page Link</button>
+    </section>
+
+    <footer data-aos="fade-up" data-aos-delay="700">
+      © 2025 ARRON GARMENTS | Crafted with ❤️ by Praveen
+    </footer>
+  </div>
+
+  <button id="backToTop">⬆️</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    function showState(state) {
+      const tn = document.getElementById("tamilnadu");
+      const ap = document.getElementById("andhra");
+      const btnTN = document.getElementById("btnTN");
+      const btnAP = document.getElementById("btnAP");
+
+      if (state === "tamilnadu") {
+        tn.style.display = "block";
+        ap.style.display = "none";
+        btnTN.classList.add("active");
+        btnAP.classList.remove("active");
+      } else {
+        tn.style.display = "none";
+        ap.style.display = "block";
+        btnAP.classList.add("active");
+        btnTN.classList.remove("active");
+      }
+    }
+
+    function copyPageLink() {
+    // 👉 Replace this with your actual Instagram profile URL
+    const instaLink = "https://www.instagram.com/aaron_garments?igsh=YWpkdWE0emkyZjNv";
+    
+    navigator.clipboard.writeText(instaLink)
+      .then(() => {
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = "✅ Link Copied!";
+        setTimeout(() => btn.textContent = originalText, 2000);
+      })
+      .catch(() => alert("Failed to copy link."));
+  }
+
+    window.onscroll = function() {
+      const btn = document.getElementById("backToTop");
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+        btn.style.display = "block";
+      else
+        btn.style.display = "none";
+    };
+    document.getElementById("backToTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  </script>
+</body>
+</html>

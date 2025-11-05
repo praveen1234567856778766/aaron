@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARRON GARMENTS - Product Gallery</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Based on original Black (#000000) & Yellow (#FFEB3B) theme */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000; /* Solid Black Background */
+            color: #ffffff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 960px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #FFEB3B; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+        .header p { color: #fff; opacity: 0.8; }
+        
+        /* Gallery Grid */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        /* Gallery Item Styling */
+        .gallery-item {
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 235, 59, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 235, 59, 0.6);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px; /* Uniform height for images */
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .item-details { padding: 15px; }
+        .item-details h4 { color: #FFEB3B; font-size: 1.1rem; margin-bottom: 5px; font-weight: 700; }
+        .item-details p { color: #ccc; font-size: 0.9rem; margin-bottom: 10px; }
+        
+        /* Shop Now Button */
+        .shop-btn {
+            background-color: #FFEB3B;
+            color: #000;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .shop-btn:hover { background-color: #fff176; }
+
+        /* Back Button Styling */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #FFEB3B;
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            z-index: 1000;
+            text-decoration: none; /* Make it look like a button */
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .back-btn:hover { transform: scale(1.1); background-color: #fff176; }
+
+        /* New styles for the footer text and button */
+        .footer-cta {
+            text-align: center;
+            margin-top: 60px; /* Add some space above */
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        .footer-cta h2 {
+            color: #FFEB3B;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        /* Reusing shop-btn style for the view all button */
+        .view-all-btn {
+            background-color: #FFEB3B;
+            color: #000;
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            font-size: 1.1rem;
+        }
+        .view-all-btn:hover { background-color: #fff176; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">⬅️ Back to Links</a> 
+    
+    <div class="container">
+        <header class="header" data-aos="fade-down">
+            <h1 id="gallery-title">ARRON GARMENTS GALLERY</h1>
+            <p id="gallery-subtitle">Premium Collections - See something you like?</p>
+        </header>
+
+        <section class="product-gallery">
+        </section>
+
+        <section class="footer-cta" data-aos="fade-up" data-aos-delay="300">
+            <h2>For more collection, visit our nearest branch!</h2> 
+            <a href="index.html" class="view-all-btn">Our branches</a>
+        </section>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // --- CORRECTED PRODUCT DATA ---
+        // **IMPORTANT:** Replace these generic image paths with your actual local file names!
+        const allProducts = {
+            shirts: [
+                { name: "Classic Cotton Shirt", desc: "Formal wear, Slim Fit", img: "shirt1.jpg", link: "#" },
+                { name: "Linen Casual Shirt", desc: "Breathable fabric, Beach look", img: "shirt2.jpg", link: "#" },
+                { name: "Denim Snap-button Shirt", desc: "Rugged style, Western fit", img: "shirt3.jpg", link: "#" }
+            ],
+            tshirts: [
+                { name: "Oversized Graphic Tee", desc: "Streetwear collection", img: "tshirt1.jpg", link: "#" },
+                { name: "Polo Collar T-Shirt", desc: "Smart casual, Piqué knit", img: "tshirt2.jpg", link: "#" },
+                { name: "V-Neck Basic Tee", desc: "Soft cotton blend", img: "tshirt3.jpg", link: "#" }
+            ],
+            jeans: [
+                // **FIXED: Added comma after the second object.**
+                { name: "Slim Fit Black Jeans", desc: "Stretch Denim", img: "jean1.jpg", link: "#" },
+                { name: "Distressed Blue Denim", desc: "Vintage wash, comfort fit", img: "jean2.jpg", link: "#" }, 
+                { name: "Classic Indigo Jeans", desc: "Regular fit, durable", img: "jean3.jpg", link: "#" }
+            ],
+            'formal-pants': [
+                // **FIXED: Replaced unreliable Unsplash links with local file paths.**
+                { name: "Stretch Trousers", desc: "Wrinkle-free, charcoal grey", img: "fp1.jpg", link: "#" },
+                { name: "Classic Pleated Pants", desc: "Wool blend, professional", img: "fp2.jpg", link: "#" },
+                { name: "Khaki Chinos", desc: "Smart casual, modern tapered fit", img: "fp3.jpg", link: "#" }
+            ],
+            'night-wear': [
+                // **FIXED: Replaced unreliable Unsplash links with local file paths and added two more items.**
+                { name: "Cotton Pyjama Set", desc: "Soft knit, relaxed fit", img: "night1.jpg", link: "#" },
+                { name: "Night Shorts & Tee", desc: "Lightweight and breathable", img: "night2.jpg", link: "#" },
+                { name: "Flannel Lounge Pants", desc: "Warm and cozy plaid", img: "night3.jpg", link: "#" }
+            ],
+            shorts: [
+                // **FIXED: Replaced unreliable Unsplash links with local file paths and added two more items.**
+                { name: "Athletic Mesh Shorts", desc: "Quick dry, running", img: "short1.jpg", link: "#" },
+                { name: "Cargo Shorts", desc: "Multi-pocket durable canvas", img: "short2.jpg", link: "#" },
+                { name: "Bermuda Cotton Shorts", desc: "Classic casual style", img: "short3.jpg", link: "#" }
+            ],
+            shoes: [
+                // **FIXED: Replaced unreliable Unsplash links with local file paths and added two more items.**
+                { name: "Leather Formal Shoes", desc: "Lace-up Oxford", img: "shoes1.jpg", link: "#" },
+                { name: "Casual Sneakers", desc: "Lightweight walking shoe", img: "shoes2.jpg", link: "#" },
+                { name: "Sports Running Shoes", desc: "High-performance athletic wear", img: "shoes3.jpg", link: "#" }
+            ]
+        };
+
+        const categories = {
+            'shirts': 'Shirts - Formal & Casual',
+            'tshirts': 'T-Shirts - Graphic & Basic Tees',
+            'jeans': 'Jeans - Denim Collection',
+            'formal-pants': 'Formal Pants - Trousers',
+            'night-wear': 'Night Wear - Pyjamas & Night Pants',
+            'shorts': 'Shorts - Athletic & Casual',
+            'shoes': 'Shoes - Footwear Collection'
+        };
+
+        function generateGallery(categoryKey) {
+            const galleryContainer = document.querySelector('.product-gallery');
+            const products = allProducts[categoryKey] || [];
+            const title = categories[categoryKey] || 'Product Gallery';
+            
+            document.getElementById('gallery-title').textContent = title.toUpperCase();
+            document.getElementById('gallery-subtitle').textContent = `Explore our collection of ${title.toLowerCase()}.`;
+            galleryContainer.innerHTML = ''; // Clear existing content
+
+            if (products.length === 0) {
+                galleryContainer.innerHTML = `<p class="text-center w-100 fs-5 mt-5" data-aos="fade-up">Currently, no specific items are available for ${title}. Check back soon!</p>`;
+                return;
+            }
+
+            products.forEach((product, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'gallery-item';
+                itemDiv.setAttribute('data-aos', 'fade-up');
+                itemDiv.setAttribute('data-aos-delay', (index * 100).toString());
+
+                itemDiv.innerHTML = `
+                    <img src="${product.img}" alt="${product.name}">
+                    <div class="item-details">
+                        <h4>${product.name}</h4>
+                        <p>${product.desc}</p>
+                        <a href="index.html" target="_blank" class="shop-btn">Visit near by branch</a>
+                    </div>
+                `;
+                galleryContainer.appendChild(itemDiv);
+            });
+            AOS.refresh();
+        }
+
+        // --- Logic to get the category from the URL and load gallery ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const category = params.get('category');
+            
+            if (category && allProducts[category]) {
+                generateGallery(category);
+            } else {
+                // Default view if accessed directly without a category 
+                generateGallery('shirts');
+            }
+        });
+    </script>
+</body>
+</html>

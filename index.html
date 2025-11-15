@@ -150,6 +150,14 @@
         .branch-card h4 { color: #FFEB3B; font-size: 1.2rem; margin-bottom: 5px; font-weight: 700; }
         .branch-card p { color: #ccc; font-size: 0.9rem; margin-bottom: 10px; line-height: 1.4; }
 
+        /* New: Group for holding the two location/call buttons */
+        .location-btn-group {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            flex-wrap: wrap; /* Allow wrapping if space is limited */
+            margin-top: 10px;
+        }
+
         .location-btn {
             background-color: #FFEB3B;
             color: #000;
@@ -165,6 +173,23 @@
             gap: 5px;
         }
         .location-btn:hover { background-color: #fff176; transform: scale(1.05); }
+        
+        /* New: Call Button Styling */
+        .call-btn {
+            background-color: #ffffff; /* White/Light background */
+            color: #000;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .call-btn:hover { background-color: #FFEB3B; transform: scale(1.05); }
 
         /* ---------- TABS & SECTIONS DISPLAY ---------- */
         .main-content-section { display: none; animation: fadeIn 0.5s ease; }
@@ -215,8 +240,7 @@
 
             <div class="d-flex justify-content-center">
                 <a href="https://www.instagram.com/aaron_garments?igsh=YWpkdWE0emkyZjNv" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="social-icon" alt="Instagram"></a>
-                <a href="https://www.instagram.com/aaron_garments?igsh=YWpkdWE0emkyZjNv" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="social-icon" alt="WhatsApp"></a>
-                <a href="tel:+919790851538"><img src="phone-call.png" class="social-icon" alt="Phone"></a>
+                <a href="https://chat.whatsapp.com/CjsuRAf3g1EHUbzMVU4VpE" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="social-icon" alt="WhatsApp"></a>
             </div>
         </header>
 
@@ -239,50 +263,74 @@
                     
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="100">
                         <h4>Sullurupeta Branch</h4>
-                        <p>2-2-15, Revenue Word No 2, Rajeev Nagar, HDFC ATM, NELLORE, Sullurpet, Tirupati, Andhra Pradesh - 524121.</p>
-                        <a href="https://share.google/RbsHlvcvx39aPoU6M" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>2-2-15, Revenue Word No 2, Rajeev Nagar, HDFC ATM, NELLORE, Sullurpet, Tirupati, Andhra Pradesh - 524121. Phone: 9360792292</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/RbsHlvcvx39aPoU6M" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+919360792292" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
                     
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="200">
                         <h4>Kota Branch</h4>
-                        <p>EXTRA MART NEAR BY AAROGYA MEDICAL OPPOSITE, KOTA, Andhra Pradesh.</p>
-                        <a href="https://share.google/PUfvE8FYjOwQhPBO0" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>EXTRA MART NEAR BY AAROGYA MEDICAL OPPOSITE, KOTA, Andhra Pradesh. Phone: 6304374016</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/PUfvE8FYjOwQhPBO0" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+916304374016" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
                     
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="300">
                         <h4>Naidupeta Branch</h4>
-                        <p>1-1-39/1, BHARATH NAGAR 1, BALAJI TRAVELS, NAYUDUPET, Vinnamla, Tirupati, Andhra Pradesh - 524126.</p>
-                        <a href="https://share.google/KzdJLSDOQKFJO7moq" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>1-1-39/1, BHARATH NAGAR 1, BALAJI TRAVELS, NAYUDUPET, Vinnamla, Tirupati, Andhra Pradesh - 524126.  Phone: 8708221762</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/KzdJLSDOQKFJO7moq" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+918708221762" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
                     
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="400">
                         <h4>Nellore Branch</h4>
-                        <p>2ND FLOOR, 25/2/587, SAVITHRI NAGAR, NAGAM TEMPLE, REVENUE WARD NELLORE - 524004.</p>
-                        <a href="https://share.google/diLUDcGYvvsEEImbZ" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>2ND FLOOR, 25/2/587, SAVITHRI NAGAR, NAGAM TEMPLE, REVENUE WARD NELLORE - 524004. Phone: 9666071778</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/diLUDcGYvvsEEImbZ" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+919666071778" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
 
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="500">
                         <h4>Srikalahasti Branch</h4>
-                        <p>RTC BUSSTAND OPPOSITE, SRI KALASTRI, TIRUPATI, Andhra Pradesh - 517640.</p>
-                        <a href="https://share.google/ZjnQgZdqGbQ1EA4lG" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>RTC BUSSTAND OPPOSITE, SRI KALASTRI, TIRUPATI, Andhra Pradesh - 517640. Phone: 9398833979</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/ZjnQgZdqGbQ1EA4lG" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+919398833979" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
                     
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="600">
                         <h4>Tirupati Branch</h4>
-                        <p>13-7-796/14B, Vinayaka nagar, Sankalpa Super Speciality Hospital, Tirupati, Andhra Pradesh - 517501.</p>
-                        <a href="https://share.google/7AfihvT4QudklugLX" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>13-7-796/14B, Vinayaka nagar, Sankalpa Super Speciality Hospital, Tirupati, Andhra Pradesh - 517501. Phone: 7989956548</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/7AfihvT4QudklugLX" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+917989956548" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
 					
 					<div class="branch-card" data-aos="fade-up" data-aos-delay="600">
                         <h4>RAILWAY KODURU</h4>
-                        <p>NO:1343, MG ROAD, RAILWAY KODURU, ANNAMAYYA (DIST) Andhra Pradesh - 516101.</p>
-                        <a href="https://share.google/7AfihvT4QudklugLX" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>NO:1343, MG ROAD, RAILWAY KODURU, ANNAMAYYA (DIST) Andhra Pradesh - 516101. Phone: 9000495717</p>
+                        <div class="location-btn-group">
+                            <a href="https://maps.app.goo.gl/7DpLK6faqeFFjr2f7?g_st=ipc" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+919000495717" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
 					
 					<div class="branch-card" data-aos="fade-up" data-aos-delay="600">
                         <h4>RAJAMPET</h4>
-                        <p>6/399 ABNR COLONY, Naveen Chandra complex Rs Road, Rajampet - 516115.</p>
-                        <a href="https://share.google/7AfihvT4QudklugLX" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>6/399 ABNR COLONY, Naveen Chandra complex Rs Road, Rajampet - 516115. Phone: 9063270776</p>
+                        <div class="location-btn-group">
+                            <a href="https://maps.app.goo.gl/HvziZCqULuNJK64g7?g_st=iw" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+919063270776" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
                 </div>
 
@@ -290,20 +338,29 @@
                     
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="100">
                         <h4>Royapuram Branch</h4>
-                        <p>2, 55, W Kal Mandapam Rd, Pudumanaikuppam, Royapuram, Chennai, Tamil Nadu 600013.</p>
-                        <a href="https://share.google/91PjHy0dSDYkdp7Uo" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>2, 55, W Kal Mandapam Rd, Pudumanaikuppam, Royapuram, Chennai, Tamil Nadu 600013. Phone: 8667081577</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/91PjHy0dSDYkdp7Uo" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+918667081577" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
 
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="200">
                         <h4>MADHAR PAKKAM Branch</h4>
-                        <p>119, PH Rd, Padhirivedu, Tamil Nadu 601202.</p>
-                        <a href="https://share.google/PxbxX5x3VGFnMqARw" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>119, PH Rd, Padhirivedu, Tamil Nadu 601202. Phone: 9962439690</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/PxbxX5x3VGFnMqARw" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+919962439690" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
 
                     <div class="branch-card" data-aos="fade-up" data-aos-delay="300">
                         <h4>Gummidipoondi Branch</h4>
-                        <p>92, GNT Road, opposite Gummidi Pundi, Tamil Nadu - 601202.</p>
-                        <a href="https://share.google/ML91Y6Py5jS8eS1rO" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                        <p>92, GNT Road, opposite Gummidi Pundi, Tamil Nadu - 601202. Phone: 6381144545</p>
+                        <div class="location-btn-group">
+                            <a href="https://share.google/ML91Y6Py5jS8eS1rO" target="_blank" class="location-btn">🗺️ Get Directions</a>
+                            <a href="tel:+916381144545" class="call-btn">📞 Call Branch</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -322,7 +379,7 @@
             </div>
 
             <h2 class="text-center section-title mt-5 mb-3" data-aos="zoom-in">Stay Connected</h2>
-            <a href="https://wa.me/918637476998" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up">
+            <a href="https://chat.whatsapp.com/CjsuRAf3g1EHUbzMVU4VpE" target="_blank" class="btn btn-custom mb-3" data-aos="fade-up">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt=""> Join WhatsApp Group
             </a>
 
@@ -335,7 +392,7 @@
             <h3>📣 Share Our Page</h3>
             <div class="d-flex justify-content-center flex-wrap">
                 <a href="https://www.instagram.com/aaron_garments?igsh=YWpkdWE0emkyZjNv"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="social-icon" alt="Instagram"></a>
-                <a href="https://wa.me/919790851538"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="social-icon" alt="WhatsApp"></a>
+                <a href="https://chat.whatsapp.com/CjsuRAf3g1EHUbzMVU4VpE"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="social-icon" alt="WhatsApp"></a>
             </div>
             <button class="copy-btn" onclick="copyPageLink()">📋 Copy Page Link</button>
         </section>
